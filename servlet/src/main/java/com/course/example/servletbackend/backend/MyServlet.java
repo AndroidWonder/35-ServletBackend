@@ -7,6 +7,7 @@
 package com.course.example.servletbackend.backend;
 
 import java.io.IOException;
+
 import javax.servlet.http.*;
 
 public class MyServlet extends HttpServlet {
@@ -20,11 +21,12 @@ public class MyServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
+
         String name = req.getParameter("name");
         resp.setContentType("text/plain");
-        if(name == null) {
+        if (name == null)
             resp.getWriter().println("Please enter a name");
-        }
-        resp.getWriter().println("Hello " + name);
+        else
+            resp.getWriter().println("Hello " + name);
     }
 }
